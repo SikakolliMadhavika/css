@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-px{
+            width: 200px;
+            height: 100px;
+            border: 1px solid;
+        }
+        .parent{
+            width: 200px;
+            height: 200px;
+            border: 2px solid;
+        }
+        .child{
+            width: 50%;
+            border: 2px solid;
+            height: 50%;
+        }
+        .rem-p{
+            font-size: 2rem;
+        }
+        html{
+            font-size: 10px;
+        }
+        .child-em{
+            font-size: 2em;
+        }
+        .parent-em{
+            font-size: 15px;
+        }
+        .box-vw{
+            width: 50vw;
+            height: 100px;
+            border: 2px solid;
+        }
+        .box-vh{
+            height: 50vh;
+            width: 100px;
+            border: 2px solid;
+        }
+        .par-rel{
+            width: 200px;
+            height: 200px;
+            border: 2px solid;
+            position: relative;
+        }
+        .chi-abs{
+            width: 50px;
+            height: 50px;
+            border: 2px solid;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+        .par-font{
+            font-size: 10px;
+
+        }
+        .chi-font{
+            font-size: inherit;
+        }
+        .vmin-div{
+            width: 20vmin;
+            height: 20vmin;
+            border: 2px solid;
+        }
+        .vmax-div{
+            width: 20vmax;
+            height: 20vmax;
+            border: 2px solid;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h3>Task 1</h3>
+    <div class="box-px"></div>
+    <!-- Box not changes when we change the viewport -->
+
+
+    <h3>Task 2</h3>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <!-- default html font size : 16px child box changes with respect to change in parent container  -->
+
+
+    <h3>Task 3</h3>
+
+    <p class="rem-p"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint itaque culpa adipisci, libero cupiditate delectus molestias, fugit nemo saepe ducimus maxime enim? Consequatur, harum. Possimus magnam incidunt voluptatem ullam dignissimos!
+    Incidunt debitis adipisci odit? Rerum suscipit pariatur quibusdam. Quae ut minus hic tenetur. Porro vitae at ex officiis, ea autem minus sapiente eos consectetur suscipit quaerat, obcaecati veritatis, reiciendis sunt.</p>
+    <!-- rem changes with respect change in font size of root element (html) -->
+
+
+    <h3>Task 4</h3>
+    <div class="parent-em">
+        <p class="child-em">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint itaque culpa adipisci, libero cupiditate delectus molestias, fugit nemo saepe ducimus maxime enim? Consequatur, harum. Possimus magnam incidunt voluptatem ullam dignissimos!
+            Incidunt debitis adipisci odit? Rerum suscipit pariatur quibusdam. Quae ut minus hic tenetur. Porro vitae at ex officiis, ea autem minus sapiente eos consectetur suscipit quaerat, obcaecati veritatis, reiciendis sunt.</p>
+    </div>
+    <!-- font-size changes with respect to change in parent element -->
+
+
+    <h3>Task 5</h3>
+    <div class="box-vw"></div>
+    <!-- box width changes with respect to vw width and occupies 50% of it -->
+
+
+    <h3>Task 6</h3>
+    <div class="box-vh"></div>
+    <!-- box height changes with respect to chnage in viewport and occupies 25% of it -->
+
+
+    <h3>Task 7</h3>
+    <div class="vmin-div"></div>
+    <!-- occupies 20% of viewport -->
+
+    <h3>Task 8</h3>
+    <div class="vmax-div"></div>
+
+    <h3>Task 9</h3>
+    <div class="par-rel">
+        <div class="chi-abs"></div>
+    </div>
+
+
+    <h3>Task 10</h3>
+    <div class="par-font">
+        Content with parent font
+        <div class="chi-font">
+            Content with child font
+        </div>
+    </div>
+
+
+
+</body>
+</html>

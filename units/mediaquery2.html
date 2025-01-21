@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            
+        }
+        .item1 , .item2, .item3 {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+        .item1{
+            background-color: red;
+        }
+        .item2{
+            background-color: blue;
+        }
+        .item3{
+            background-color: green;
+        }
+        .three{
+            padding: 10px;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .six{
+            width: 100px;
+            height: 100px;
+            border: 2px solid;
+            text-align: center;
+            background-color: aqua;
+        }
+        .seven{
+            width: 100%;
+            height: 100px;
+            background-color: bisque;
+            text-align: center;
+        }
+        .eight{
+            font-size: 20px;
+        }
+        .ten{
+            width: 300px;
+            object-fit: cover;
+            height: 300px;
+        }
+        a{
+            color: red;
+        }
+        h2{
+            font-size: 32px;
+        }
+        .onethree{
+            width: 200px;
+            height: 200px;
+            background-color: lavender;
+        }
+        .onefive{
+            padding: 10px;
+            display: flex;
+        }
+        .start, .middle, .end{
+            width: 70px;
+            height: 70px;
+            margin: 10px;
+
+        }
+        .start{
+            background-color: orange;
+        }
+        .middle{
+            background-color:violet;
+
+        }
+        .end{
+            background-color: greenyellow;
+        }
+        .sidebar{
+            width: 150px;
+            height: fit-content;
+            background-color: yellowgreen;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .sidebar span{
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            padding: 8px;
+            border: 1px solid;
+        }
+        .grid-con{
+            
+            gap: 10px;
+        }
+        .col1{
+            padding: 10px;
+            background-color: lightcoral;
+
+        }
+        .col2{
+            padding: 10px;
+            background-color: lightpink;
+        }
+        
+        
+       
+        @media screen and (min-width : 768px) and (max-width : 1024px)
+        {
+            body{
+                background-color: lightblue;
+            }
+        }
+        @media screen and (min-width : 600px) and (max-width : 1200px){
+            p{
+                font-size: 18px;
+            }
+        }
+        @media screen and (min-width : 480px){
+            .three{
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+        @media screen and (min-width : 500px) and (max-width : 800px){
+            h1{
+                color : green;
+            }
+        }
+        @media screen and (max-width : 399px)
+        {
+            img{
+                display: none;
+            }
+        }
+        @media screen and (min-width : 1024px){
+            .six{
+                padding: 20px;
+            }
+        }
+        @media screen and (min-width : 600px) and (max-width : 1200px){
+            .seven{
+                background-color: lightgray;
+            }
+        }
+        @media screen and (max-width : 480px){
+            .eight p{
+                font-size: 16px;
+            }
+        }
+        @media screen and (max-width : 600px){
+            .ten{
+                width: 100%;
+            }
+        }
+        @media screen and (min-width : 700px) and (max-width : 1200px){
+            a{
+                color: blue;
+            }
+        }
+        @media screen and (min-width : 500px) and (max-width : 800px){
+            h2{
+                font-size: 24px;
+            }
+        }
+        @media screen and (min-width : 1024px){
+            .onethree{
+                border: 2px solid;
+            }
+        }
+        @media screen and (min-width : 600px){
+            .onefive{
+                flex-direction: column;
+            }
+        }
+        @media screen and (min-width : 800px) and (max-width : 1200px){
+            .sidebar{
+                width:250px;
+            }
+        }
+        @media screen and (min-width : 768px) and (max-width : 1200px){
+            .grid-con{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    Task 2
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum architecto quasi consequuntur adipisci id esse, molestiae assumenda! Commodi adipisci velit illo repellendus minus nulla quos fuga dolores nobis, itaque magnam!
+
+    </p><br><br>
+    Task 3
+    <div class="three">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+    </div><br><br>
+    
+    <h1>Task 4</h1>
+    <h1>H1 tag</h1>
+    <h3>H3 tag</h2>
+    <h3>H3 tag</h3><br><br>
+    Task 5 <br><br>
+
+    <img src="https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg" alt="">
+
+    <br><br>
+    <div class="six">Task 6</div>
+
+    <br><br>
+    <div class="seven">Header Task 7</div>
+    <br><br>
+    Task 8
+
+    <div class="eight">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        <p>Dolor aut maxime autem cupiditate laboriosam omnis accusantium </p>
+        <p>commodi cum necessitatibus, hic fugit ipsam doloribus delectus </p>
+    </div>
+    <br><br>
+    Task 9 
+    <br><br>
+
+    <div class="grid-con">
+        <div class="col1"> Column1</div>
+        <div class="col2">Column2</div>
+    </div>
+
+
+    <br><br>
+    Task 10 <br><br>
+    <img class="ten" src="https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg" alt="">
+    <br><br>
+    
+    <a href="">Task 11</a><br>
+    <a href="">Task 11</a>
+    <br><br>
+    <h2>Task 12</h2>
+    <h2>H2 tag</h2>
+    <h3>H3 tag</h3>
+    <br><br>
+    <div class="onethree">Task 13</div>
+    <br><br>
+
+    Task 14 <br><br> 
+    <div class="sidebar">
+        <span>Home</span>
+        <span>About</span>
+        <span>Help</span>
+        <Span>Contact</Span>
+        <span>Services</span>
+    </div> 
+
+    <br><br>
+
+    Task 15
+    <div class="onefive">
+        <div class="start"></div>
+        <div class="middle"></div>
+        <div class="end"></div>
+    </div>
+
+
+
+
+
+
+
+    
+    
+</body>
+</html>

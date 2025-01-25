@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 100vh;
+            grid-template-rows: 1fr 2fr 2fr 1fr;
+            background-color: grey;
+            padding: 10px;
+            gap: 15px;
+            grid-template-areas: 
+            'a a a'
+            'b c c'
+            'b d e'
+            'f f f';
+        }
+        .item{
+            border: 2px solid black;
+            color: white;
+            font-size: 20px;
+            position: relative;
+        }
+        .item p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .item1{
+            grid-area: a;
+            background-image: linear-gradient(to right, blueviolet,lavender);
+        }
+        .item2{
+            grid-area: b;
+            background-image: linear-gradient(to bottom,white, aqua);
+        }
+       
+        .item3, .item4, .item5{
+            background-image: linear-gradient(to bottom right, blueviolet,blue,skyblue, aqua);
+        }
+        .item3{
+            grid-area: c;
+        }
+        .item4{
+            grid-area: d;
+        }
+        .item5{
+            grid-area: e;
+        }
+        .item6{
+            grid-area: f;
+            background-image: linear-gradient(to right, blueviolet,lavender);
+        }
+        @media screen and (max-width : 900px){
+            .grid-container{
+                
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas: 
+                'a b'
+                'c d'
+                'e f';
+            }
+        } 
+        @media screen and (max-width : 550px){
+            .grid-container{
+                
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, 1fr);
+                grid-template-areas: 
+                'a'
+                'b'
+                'c'
+                'd'
+                'e'
+                'f';
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item item1"> 
+            <p>
+                Header
+            </p>
+        </div>
+        <div class="item item2">
+            <p>
+                Sidebar
+            </p>
+        </div>
+        <div class="item item3">
+            <p>
+                Content-1
+            </p>
+        </div>
+        <div class="item item4">
+            <p>Content-2</p>
+        </div>
+        <div class="item item5">
+            <p>Content-3</p>
+        </div>
+        <div class="item item6">
+            <p>Footer</p>
+        </div>
+    </div>
+</body>
+</html>

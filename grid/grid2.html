@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+            padding: 20px;
+            height: 100vh;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100%;
+            gap: 15px;
+        }
+        .item{
+            height: 100%;
+            border: 2px solid black;
+            color: white;
+            font-size: 25px;
+            font-weight: 500;
+            background-color:aqua;
+            text-align: center;
+            position: relative;
+        }
+        .item p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .item1{
+            background-image: linear-gradient(to right, blueviolet,lavender);
+        }
+        .item2{
+            background-image: linear-gradient(to bottom,white, aqua);
+        }
+       
+        .item3, .item4, .item5{
+            background-image: linear-gradient(to bottom right, blueviolet,blue,skyblue, aqua);
+        }
+        .item6{
+            background-image: linear-gradient(to right, blueviolet,lavender);
+        } 
+        @media screen and (min-width : 601px) and (max-width : 900px){
+            .grid-container{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media screen and (min-width : 901px){
+            .grid-container{
+                grid-template-rows: 1fr 2fr 2fr 1fr;
+                grid-template-columns: 1fr 2fr 2fr;
+            }
+            .item1{
+                grid-column: 1/4;
+                background-image: linear-gradient(to right, blueviolet,lavender);
+            }
+            .item2{
+                grid-row: 2/4;
+            }
+            .item3{
+                grid-column: 2/4;
+            }
+            .item6{
+                grid-column: 1/4;
+            } 
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item item1"> 
+            <p>
+                Header
+            </p>
+        </div>
+        <div class="item item2">
+            <p>
+                Sidebar
+            </p>
+        </div>
+        <div class="item item3">
+            <p>
+                Content-1
+            </p>
+        </div>
+        <div class="item item4">
+            <p>Content-2</p>
+        </div>
+        <div class="item item5">
+            <p>Content-3</p>
+        </div>
+        <div class="item item6">
+            <p>Footer</p>
+        </div>
+    </div>
+</body>
+</html>

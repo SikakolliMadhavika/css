@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RISEFIT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- favicon -->
+    <style>
+        body, html{
+            height: 100%;
+            width: 100%;
+        }
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            display: grid;
+            grid-template-columns: .7fr 2fr .5fr;
+            padding: 18px;
+            background-color: pink;
+        }
+        .menu-container{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+        }
+        .menu-container a{
+            text-decoration: none;
+        }
+        .social-media-box{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            font-size : 1.2rem;
+        }
+        .bg-container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .left-bg, .right-bg{
+            height: 100vh;
+            border: 1px solid red;
+            position: relative;    
+        }
+        .left-bg p{
+            position: absolute;
+            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+        }
+        .about-main{
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100vh;
+        }
+        .about-container{
+            width: 100%;
+            border: 2px solid black;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background-color: pink;
+            padding: 15px;
+            gap: 15px;
+        }
+        .about-container img{
+            width: 100%;
+        }
+        .about{
+            place-items: center;
+            place-content: center;
+        }
+        .service{
+            display: grid;
+            grid-template-columns: ifr;
+        }
+        .servicesline{
+            padding: 55px;
+            font-size: 36px;
+            place-items: center;
+        }
+        .service-container{
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background-color: pink;
+            place-items: center;
+            gap: 30px;
+        }
+        .service-container div{
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .service-container img{
+            width: 100%;
+        }
+        .service-container .serv{
+            margin-bottom: 20px;
+        }
+        .plan-container{
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100vh;
+            padding: 15px;
+            background-color: aquamarine;
+            gap: 10px;
+            border: 2px solid;
+        }
+        .plan-container .my-plans{
+            place-self: center;
+            padding: 10px;
+            border: 2px solid red;
+        }
+        .plans{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+        }
+        .plan{
+            place-content: center;
+            place-items: center;
+            background-color: white;
+            clip-path: polygon(26% 16%, 100% 0%, 69% 89%, 0% 100%);
+
+        }
+        .plan p{
+            padding: 4px;
+        }
+        .plan button{
+            padding: 5px;
+        }
+
+        .team{
+            display: grid;
+            grid-template-columns: 1fr;
+            background-color: bisque;
+            height: 100vh;
+        }
+        .team>.team-container{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+        trainer>img{
+            width: 100%;
+            border: 2px solid red;
+        }
+        .blog-container{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            place-content: center;
+        }
+        .blog-container img{
+            width: 100%;
+            border-radius: 50%;
+        }
+        .feedbackandmap{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 10px;
+            place-content: center;
+        }  
+        .feedback{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(7,.1fr);
+            gap: 20px;
+
+        }  
+        .map{
+            border: 2px solid red;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            place-items: center;
+        }  
+        .schedule-container{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+        } 
+        .days{
+            display: flex;
+            gap: 10px;
+        }
+        table td{
+            padding: 20px;
+            text-align: center;
+        }
+        footer{
+            height: 40vh;
+            background-color: black;
+            padding: 10px;
+        }
+        .contact{
+            display: grid;
+            gap: 2px;
+        }
+        .contact p{
+            background-color: white;
+            padding: 5px;
+
+        }
+        .footer-sym{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- header -->
+        <header class="header">
+            <div class="name-container">
+                <p>RISEFIT</p>
+            </div>
+            <div class="menu-container">
+                <a href="">HOME</a>
+                <a href="">ABOUT</a>
+                <a href="">SERVICES</a>
+                <a href="">CONTACT</a> 
+                <a href="">PLANS</a>
+                <a href="">OUR TEAM</a>
+                <a href="">BLOG</a>
+            </div>
+            <div class="social-media-box">
+                <p><i class="bi bi-facebook"></i></p>
+                <p><i class="bi bi-instagram"></i></p>
+                <p><i class="bi bi-twitter"></i></p>
+                <p><i class="bi bi-youtube"></i></p>
+            </div>  
+        </header>
+
+
+        <!-- background container -->
+        <div class="bg-container">
+            <div class="left-bg">
+                <img src="https://th.bing.com/th?id=OIP.e1s7CD7tUUs-CLsrpxr_dAHaL5&w=197&h=316&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"  width="100%" height="100%"  alt="">
+                <p>Title</p>
+
+            </div>
+            <div class="right-bg">
+                <img src="https://th.bing.com/th?id=OIP.e1s7CD7tUUs-CLsrpxr_dAHaL5&w=197&h=316&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"  width="100%" height="100%"  alt="">
+                <!-- scroll images -->
+
+            </div>
+
+
+
+        </div>
+
+        <!-- about container -->
+        <div class="about-main">
+            <div class="about">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing </p>
+
+
+                <p>officiis totam tenetur voluptatem recusandae fugiat magni, assumenda et modi provident.</p>
+            </div>
+            <div class="about-container">
+                <div class="item diet">
+                    <img src="https://th.bing.com/th?id=OIP.k7-c1nFYyMkHqr7Glc8Q1wHaFa&w=292&h=213&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores in quasi repellat, impedit provident vero harum, 
+    
+                    </p>
+                </div>
+                <div class="item personal">
+                    <img src="https://th.bing.com/th?id=OIP.k7-c1nFYyMkHqr7Glc8Q1wHaFa&w=292&h=213&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="">
+                    <p>quibusdam odit doloribus iure amet ducimus hic accusantium porro aliquid obcaecati odio quam voluptas.</p>
+                </div>
+                <div class="item machine">
+                    <img src="https://th.bing.com/th?id=OIP.k7-c1nFYyMkHqr7Glc8Q1wHaFa&w=292&h=213&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="">
+                    <p>quibusdam odit doloribus iure amet ducimus hic accusantium porro aliquid obcaecati odio quam voluptas.</p>
+                </div>
+                <div class="item music">
+                    <img src="https://th.bing.com/th?id=OIP.k7-c1nFYyMkHqr7Glc8Q1wHaFa&w=292&h=213&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="">
+                    <p>
+                        quibusdam odit doloribus iure amet ducimus hic accusantium porro aliquid obcaecati odio quam voluptas.
+                    </p>
+                </div>
+            </div>
+    
+        </div>
+
+
+
+        <!-- services container -->
+        <div class="service">
+            <div class="servicesline">
+                <p>WHAT I OFFER</p>
+            </div>
+            <div class="service-container">
+                <div class="serv service1">
+                    <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+                    <p>cardio</p>
+                </div>
+                <div class="serv service2">
+                    <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+                    <p>jumba</p>
+    
+                </div>
+                <div class="serv service3">
+                    <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+                    <p>yoga</p>
+                </div>
+                <div class="serv service4">
+                    <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+                    <p>musclegrow</p>
+                </div>
+                <div class="serv service5">
+                    <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+                    <p>weightloss</p>
+                </div>
+                <div class="serv service6">
+                    <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+                    <p>Aerodynamics</p>
+                </div>
+                <div class="service7">
+                    <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+                    <p>vaccum Bath</p>
+                </div>
+                <div class="service8">
+                    <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+                    <p>cardio</p>
+                </div>
+                <div class="service9">
+                    <img src="https://themewagon.github.io/zacson/assets/img/gallery/team2.png" alt="">
+                    <p>cardio</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- plan container -->
+        <div class="plan-container">
+            <div class="my-plans">
+                <p>our plans</p>
+                <p>choose yours</p>
+            </div>
+            <div class="plans">
+                <div class="plan plan1">
+                    <p>3 months</p>
+                    <p>amount</p>
+                    <p>eqip</p>
+                    <p>vaccum</p>
+                    <p>yoga</p>
+                    <p>personal</p>
+                    <p>diet</p>
+                    <button>Enroll</button>
+                </div>
+                <div class="plan plan2">
+                    <p>3 months</p>
+                    <p>amount</p>
+                    <p>eqip</p>
+                    <p>vaccum</p>
+                    <p>yoga</p>
+                    <p>personal</p>
+                    <p>diet</p>
+                    <button>Enroll</button>
+                </div>
+                <div class="plan plan3">
+                    <p>3 months</p>
+                    <p>amount</p>
+                    <p>eqip</p>
+                    <p>vaccum</p>
+                    <p>yoga</p>
+                    <p>personal</p>
+                    <p>diet</p>
+                    <button>Enroll</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- team container -->
+        <div class="team">
+            <div class="myteam">
+                <p>team</p>
+                <p>trainer</p>
+            </div>
+            <div class="team-container">
+                <div class="trainer trainer1">
+                    <img src="https://th.bing.com/th/id/OIP.tAbFcNaNbfP1rnZfJN7mewHaH2?rs=1&pid=ImgDetMain" alt=""  width="100%" height="100%">
+                    <p>hii</p>
+                    <!-- on hover it is visible -->
+                </div>
+                <div class="trainer trainer2">
+                    <img src="https://th.bing.com/th/id/OIP.tAbFcNaNbfP1rnZfJN7mewHaH2?rs=1&pid=ImgDetMain" alt=""  width="100%" height="100%">
+                </div>
+                <div class="trainer trainer3">
+                    <img src="https://th.bing.com/th/id/OIP.tAbFcNaNbfP1rnZfJN7mewHaH2?rs=1&pid=ImgDetMain" alt=""  width="100%" height="100%">
+                </div>
+                <div class="trainer trainer4">
+                    <img src="https://th.bing.com/th/id/OIP.tAbFcNaNbfP1rnZfJN7mewHaH2?rs=1&pid=ImgDetMain" width="100%" height="100%">
+                </div>
+                <div class="trainer trainer5">
+                    <img src="https://th.bing.com/th/id/OIP.tAbFcNaNbfP1rnZfJN7mewHaH2?rs=1&pid=ImgDetMain" alt=""  width="100%" height="100%">
+                </div>
+                <div class="trainer trainer6">
+                    <img src="https://th.bing.com/th/id/OIP.tAbFcNaNbfP1rnZfJN7mewHaH2?rs=1&pid=ImgDetMain" alt=""  width="100%" height="100%">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- blog container -->
+        <!-- the images shoul scrooll -->
+        <div class="blog-container">
+            <div class="blog1">
+                <img src="https://thumbs.dreamstime.com/b/gym-portrait-rock-sign-woman-fitness-success-winning-workout-energy-health-goals-happy-face-young-gym-portrait-269581812.jpg" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Autem laborum dolores
+                    totam libero explicabo doloremque quia 
+                    deleniti quam hic reiciendis. 
+                </p>
+            </div>
+            <div class="blog2">
+                <img src="https://thumbs.dreamstime.com/b/gym-portrait-rock-sign-woman-fitness-success-winning-workout-energy-health-goals-happy-face-young-gym-portrait-269581812.jpg" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Autem laborum dolores
+                    totam libero explicabo doloremque quia 
+                    deleniti quam hic reiciendis. 
+                </p>
+            </div>
+            <div class="blog3">
+                <img src="https://thumbs.dreamstime.com/b/gym-portrait-rock-sign-woman-fitness-success-winning-workout-energy-health-goals-happy-face-young-gym-portrait-269581812.jpg" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Autem laborum dolores
+                    totam libero explicabo doloremque quia 
+                    deleniti quam hic reiciendis. 
+                </p>
+            </div>
+            <div class="blog4">
+                <img src="https://thumbs.dreamstime.com/b/gym-portrait-rock-sign-woman-fitness-success-winning-workout-energy-health-goals-happy-face-young-gym-portrait-269581812.jpg" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Autem laborum dolores
+                    totam libero explicabo doloremque quia 
+                    deleniti quam hic reiciendis. 
+                </p>
+            </div>
+            <div class="blog5">
+                <img src="https://thumbs.dreamstime.com/b/gym-portrait-rock-sign-woman-fitness-success-winning-workout-energy-health-goals-happy-face-young-gym-portrait-269581812.jpg" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Autem laborum dolores
+                    totam libero explicabo doloremque quia 
+                    deleniti quam hic reiciendis. 
+                </p>
+            </div>
+            <div class="blog6">
+                <img src="https://thumbs.dreamstime.com/b/gym-portrait-rock-sign-woman-fitness-success-winning-workout-energy-health-goals-happy-face-young-gym-portrait-269581812.jpg" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Autem laborum dolores
+                    totam libero explicabo doloremque quia 
+                    deleniti quam hic reiciendis. 
+                </p>
+            </div>
+            <div class="blog7">
+                <img src="https://thumbs.dreamstime.com/b/gym-portrait-rock-sign-woman-fitness-success-winning-workout-energy-health-goals-happy-face-young-gym-portrait-269581812.jpg" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Autem laborum dolores
+                    totam libero explicabo doloremque quia 
+                    deleniti quam hic reiciendis. 
+                </p>
+            </div>
+            <div class="blog8">
+                <img src="https://thumbs.dreamstime.com/b/gym-portrait-rock-sign-woman-fitness-success-winning-workout-energy-health-goals-happy-face-young-gym-portrait-269581812.jpg" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Autem laborum dolores
+                    totam libero explicabo doloremque quia 
+                    deleniti quam hic reiciendis. 
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <!-- feedback and map -->
+        <div class="feedbackandmap">
+            <div class="feedback">
+                <p></p>
+                <p>Feedback Form</p>
+                <input type="text" placeholder="Your Name">
+                <input type="text" placeholder="Your Email" pattern="">
+                <input type="text" placeholder="Feedback">
+                <textarea  name="" id="" placeholder="Suggestions" rows="20" ></textarea>
+                <input type="button" value="Submit">
+
+                
+
+            </div>
+            <div class="map">
+                <p>Map</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30443.906456702887!2d78.3906161!3d17.484188500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91b5be1f29c3%3A0xf5af71d23e422328!2sKukatpally%20Housing%20Board%20Colony%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1738158746815!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+
+
+        <!-- timings -->
+         <div class="schedule-container">
+            <p>Schedule</p>
+            <div class="days">
+                <p>Monday</p><p>/</p><p>Tuesday</p><p>/</p><p>Wednesday</p>
+                <p>/</p><p>Thursday</p><p>/</p>
+                <p>Friday</p><p>/</p><p>Saturday</p><p>/</p><p>Sunday</p>
+            </div>
+            <table border="1" cellspacing="0" cellpadding="10px">
+                <tr>
+                    <td>Exercise</td>
+                    <td>Training</td>
+                    <td>Timing</td>
+                    <td>Timing</td>
+                </tr>
+                
+                
+                
+                
+                <tr>
+                    <td>BodyBuilding</td>
+                    <td>John</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+                <tr>
+                    <td>Yoga</td>
+                    <td>William</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+                <tr>
+                    <td>Jumba</td>
+                    <td>Jack</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+                <tr>
+                    <td>WeightLoss</td>
+                    <td>Willson</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+                <tr>
+                    <td>AeroDynamics</td>
+                    <td>Stephen</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+            </table>
+         </div>
+
+
+
+
+        <footer>
+            <div class="contact">
+                <p>
+                    Phno1 : +911234567890
+                </p>
+                <p>
+                    Phno2 : +919876543210
+                </p>
+                <p><i class="bi bi-geo-alt"></i></p>
+                <p><i class="bi bi-phone"></i></p>
+                <p><i class="bi bi-envelope"></i></p>
+                <div class="footer-sym">
+                    <p><i class="bi bi-facebook"></i></p>
+                    <p><i class="bi bi-instagram"></i></p>
+                    <p><i class="bi bi-twitter"></i></p>
+                    <p><i class="bi bi-youtube"></i></p>
+                </div>
+                
+
+            </div>
+            
+
+        </footer>
+
+
+
+
+
+    </div>
+    
+</body>
+</html>

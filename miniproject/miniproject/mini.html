@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RISEFIT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- faviconnnn is not working -->
+    
+    
+    <style>
+        body, html{
+            height: 100%;
+            width: 100%;
+        }
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-size: 1.1rem;            
+        }
+        .header{
+            display: grid;
+            grid-template-columns: .5fr 2fr .4fr;
+            padding: 10px;
+            place-items: center;
+            background-image: repeating-linear-gradient(to bottom right, purple, rgb(243, 85, 112),rgb(248, 149, 166));
+            color: white;
+        }
+        .menu-container{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+        }
+        .menu-container a{
+            text-decoration: none;
+            color: white;
+            width: 100%;
+            padding: 9px;
+            
+        }
+        .social-media-box{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+            font-size : 1.2rem;
+            padding: 5px;
+        }
+        .bg-container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .left-bg{
+            height: 100vh;
+            position: relative;  
+        }
+        .right-bg{
+            height: 100vh;
+        }
+        .left-bg video{
+            width: 100%;
+            height: 100vh;
+            object-fit:cover;
+        }
+        .left-bg .quote{
+            position: absolute;
+            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -40%);
+            font-size: 2rem;
+        }
+        .left-bg .title{
+            position: absolute;
+            color: white;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+        }
+        .right-bg .bg{
+            position: absolute;
+            width: 50%;
+        }
+        .right-bg marquee{
+            width: 100%;
+            height: 100%;
+        }
+        .right-bg img{
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        .about-main{
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100vh;
+        }
+        .about-container{
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background-color: pink;
+            padding: 10px;
+            gap: 10px;
+        }
+        .about-container img{
+            width: 90%;
+            object-fit: cover;
+            height: 50%;
+            border-radius: 15px;
+        }
+        .about{
+            place-items: center;
+            place-content: center;
+        }
+        .item p{
+            text-align: center;
+            padding-bottom: 20px;
+        }
+       .service{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .servicesline{
+            padding: 55px;
+            place-items: center;
+        }
+        .service-container{
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 2fr 1fr;
+            background-color: pink;
+            place-items: center;
+            gap: 30px;
+            height: 100%;
+        }
+        .service-container div{
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .service-container img{
+            width: 100%;
+            height: 90%;
+            overflow: hidden;
+        }
+        .service-container .serv{
+            margin-bottom: 20px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 2px solid red;
+        }
+        .plan-container{
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100vh;
+            padding: 15px;
+            background-color: aquamarine;
+            gap: 10px;
+            border: 2px solid;
+        }
+        .plan-container .my-plans{
+            place-self: center;
+            padding: 10px;
+            border: 2px solid red;
+        }
+        .plans{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+        }
+        .plan{
+            place-content: center;
+            padding: 35px;
+            place-items: center;
+            background-color: white;
+            clip-path: polygon(23% 12%, 100% 0%, 77% 88%, 0% 100%);
+            /* clip-path: polygon(0% 75%, 100% 51%, 100% 100%, 0% 100%); */
+        }
+        .plan p{
+            padding: 4px;
+        }
+        .plan button{
+            padding: 5px;
+        }
+        .team{
+            display: grid;
+            grid-template-columns: 1fr;
+            background-color: bisque;
+            height: 100vh;
+        }
+        .myteam{
+            place-self: center;
+        }
+        .team>.team-container{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+        .trainer>img{
+            width: 100%;
+            border: 2px solid red;
+        }
+        .blog-container{
+            height: 120vh;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            place-content: center;
+        }
+        .blog-container img{
+            width: 100%;
+            border-radius: 50%;
+        }
+        .feedbackandmap{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 10px;
+            place-content: center;
+        }  
+        .feedback{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(7,.1fr);
+            gap: 25px;
+            padding: 39px;
+            border: 2px solid;
+            /* place-content: center center; */
+            /* place-items: center; */
+            justify-items: center;
+        }  
+        .feedback input{
+            width: 70%;
+            padding: 10px;
+        }
+        input[type="button"]{
+            width: 25%;
+            padding: 3px;
+            margin-top: 23%;
+        }
+        
+        
+        textarea{
+
+            width: 70%;
+            height: 500%;
+            padding: 15px;
+            /* height: 450%; */
+            /* cols: 10; */
+
+        }
+        .map{
+            border: 2px solid red;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            place-items: center;
+            place-content: center;
+        }  
+        .schedule-container{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 30px;
+            justify-items: center;
+        } 
+        .days{
+            display: flex;
+            gap: 10px;
+        }
+        table td{
+            padding: 20px;
+            text-align: center;
+        }
+        footer{
+            height: 40vh;
+            background-color: black;
+            padding: 10px;
+        }
+        .contact{
+            display: grid;
+            gap: 2px;
+        }
+        .contact p{
+            background-color: white;
+            padding: 5px;
+        }
+        .footer-sym{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .menu-container a:hover{
+            background-color: purple;
+            color: pink;
+        }
+        .social-media-box p:hover{
+            color: purple;
+            animation-name: rotate;
+            animation-iteration-count: infinite;
+            animation-duration: 2s; 
+        }
+        @keyframes rotate{
+            from{}
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- header -->
+        <header class="header">
+            <div class="name-container">
+                <p>RISEFIT</p>
+                <!-- logo image -->
+                <!-- logo rotate -->
+            </div>
+            <div class="menu-container">
+                <a href="">HOME</a>
+                <a href="">ABOUT</a>
+                <a href="">SERVICES</a>
+                <a href="">CONTACT</a> 
+                <a href="">PLANS</a>
+                <a href="">OUR TEAM</a>
+                <a href="">BLOG</a>
+                <!-- under more some options box -->
+            </div>
+            <div class="social-media-box">
+                <p><i class="bi bi-facebook"></i></p>
+                <p><i class="bi bi-instagram"></i></p>
+                <p><i class="bi bi-twitter"></i></p>
+                <p><i class="bi bi-youtube"></i></p>
+            </div>  
+        </header>
+
+
+        <!-- background container -->
+        <div class="bg-container">
+            <div class="left-bg">
+                <!-- <video src="https://videos.pexels.com/video-files/5319428/5319428-uhd_1440_2560_25fps.mp4" autoplay muted loop></video> -->
+                <video src="https://videos.pexels.com/video-files/8435992/8435992-hd_1080_1920_25fps.mp4" autoplay muted loop></video>
+                <p class="title">RISEFIT</p><br><br>
+                <p class="quote">Sweat Now, <br>Shine Later</p>
+
+            </div>
+            <div class="right-bg">
+                <img class="bg"  src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="100%" height="100%" alt="">
+                <marquee behavior="scroll" direction="right" scrollamount="20">
+                    
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="100%" height="100%" alt="">
+                    <img src="https://img.freepik.com/free-photo/females-working-out-together_23-2148387793.jpg?t=st=1738227157~exp=1738230757~hmac=8e56515f5a9730e77865aa76d2a7879fc67946a80aea58cb3924558f5691588e&w=900" width="100%" height="100%" alt="">
+                    <img src="https://cdn.pixabay.com/photo/2016/03/27/23/08/woman-1284656_1280.jpg" width="100%" height="100%" alt="">
+
+                </marquee>
+
+                
+                <!-- scroll images are not proper -->
+            </div>
+
+
+
+        </div>
+
+        <!-- about container -->
+        <div class="about-main">
+            <div class="about">
+                <p>WHY CHOOSE US </p>
+
+
+                <p>Transform your body, elevate your mind—our gym is where strength meets determination.</p>
+            </div>
+            <div class="about-container">
+                <div class="item machine">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <p>Modern Equipment</p>
+                    <p>Modern technology in fitness equipment helps track progress, customize workouts, and keep training sessions engaging.
+    
+                    </p>
+                </div>
+                <div class="item steam">
+                    <img src="https://www.jaquar.com/images/thumbs/0009886_archimede-steam-cabin-corner_300.jpeg" alt="">
+                    <p>Steam Bath</p>
+                    <p>A steam bath relaxes muscles, improves circulation, and helps your body recover faster after intense workouts.</p>
+                </div>
+                <div class="item diet">
+                    <img src="https://th.bing.com/th/id/OIP.qBEBICe-nfFwnMEKKlILvQHaEZ?w=285&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="">
+                    <p>Diet plan</p>
+                    <p>A balanced diet complements your workout, helping with muscle growth, fat loss, and overall well-being.</p>
+                </div>
+                <div class="item personal">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAmQTA3P0O0INgYoky4Zkv8vrkpKLMqiyMDg&s" alt="">
+                    <p>Personal Training</p>
+                    <p>
+                        Personal training provides expert guidance, ensuring you exercise with the right technique and achieve maximum results safely."
+
+                    </p>
+                </div>
+            </div>
+    
+        </div>
+
+
+
+        <!-- services container -->
+        <div class="service">
+            <div class="servicesline">
+                <p>WHAT I OFFER</p>
+            </div>
+            <div class="service-container">
+                <div class="serv service1">
+                    <img src="https://plus.unsplash.com/premium_photo-1664478033451-837e72808845?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <p>cardio</p>
+                </div>
+                <div class="serv service2">
+                    <img src="https://th.bing.com/th/id/R.9a4645304285c17bf18a81e802fa0e5d?rik=Vrpan4lcjw08HA&riu=http%3a%2f%2fnew-sport-workout.com%2fwp-content%2fuploads%2f2018%2f06%2fZumba-fitnes-veselye-i-produktivnye-trenirovki.jpg&ehk=MjfsXrbGqoDDhZFKYUyBef4levUGydIKRdKOx%2fmgguU%3d&risl=&pid=ImgRaw&r=0" alt="">
+                    <p>jumba</p>
+    
+                </div>
+                <div class="serv service6">
+                    <img src="https://th.bing.com/th/id/OIP.1x_YwA4n3guWoD4l4rU1cgHaE8?w=274&h=183&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+
+                    <p>AeroDynamics</p>
+                </div>
+
+                <div class="serv service3">
+                    <img src="https://plus.unsplash.com/premium_photo-1674059544447-3f259e399dc3?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <p>yoga</p>
+                </div>
+                <div class="serv service4">
+                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p>Bodybuilding</p>
+                </div>
+
+                
+                <div class="serv service7">
+                    <img src="https://cdn.pixabay.com/photo/2021/12/25/13/09/sauna-6893064_1280.jpg" alt="">
+                    <p>vaccum Bath</p>
+                </div>
+                
+                <div class="serv service9">
+                    <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2022/02/02/16438270922119.jpg" alt="">
+                    <p>Strength Training</p>
+                </div>
+
+
+                <div class="serv service5">
+                    <img src="https://cdn.pixabay.com/photo/2023/01/08/12/50/weight-loss-7705107_1280.jpg" alt="">
+                    <p>weightloss</p>
+                </div>
+                <div class=" serv service8">
+                    <img src="https://plus.unsplash.com/premium_photo-1682435545493-db423e4ace01?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <p>Musclegrow</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- plan container -->
+        <div class="plan-container">
+            <div class="my-plans">
+                <p>Our plans</p>
+                <p>You can choose yours</p>
+            </div>
+            <div class="plans">
+                <div class="plan plan1">
+                    <p>3 Months</p>
+                    <p>Amount - </p>
+                    <p>Unlimited Equipment</p>
+                    <p>Steam Bath</p>
+                    <p>Yoga</p>
+                    <p>Personal Trainer</p>
+                    <p>Diet Plan</p>
+                    <button>Enroll</button>
+                </div>
+                <div class="plan plan2">
+                    <p>6 Months</p>
+                    <p>Amount - </p>
+                    <p>Unlimited Equipment</p>
+                    <p>Steam Bath</p>
+                    <p>Yoga</p>
+                    <p>Personal Trainer</p>
+                    <p>Diet Plan</p>
+                    <button>Enroll</button>
+                </div>
+                <div class="plan plan3">
+                    <p>6 Months</p>
+                    <p>Amount - </p>
+                    <p>Unlimited Equipment</p>
+                    <p>Steam Bath</p>
+                    <p>Yoga</p>
+                    <p>Personal Trainer</p>
+                    <p>Diet Plan</p>
+                    <button>Enroll</button>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <!-- team container -->
+        <div class="team">
+            <div class="myteam">
+                <p>team</p>
+                <p>trainer</p>
+            </div>
+            <div class="team-container">
+                <div class="trainer trainer1">
+                    <img src="https://cdn.pixabay.com/photo/2014/09/28/19/48/fitness-465202_1280.jpg" alt=""  width="100%" height="100%">
+                    <p>hii</p>
+                    <!-- on hover it is visible -->
+                </div>
+                <div class="trainer trainer2">
+                    <img src="https://cdn.pixabay.com/photo/2017/03/13/20/50/olympic-rings-2141125_1280.jpg" alt=""  width="100%" height="100%">
+                </div>
+                <div class="trainer trainer3">
+                    <img src="https://cdn.pixabay.com/photo/2023/03/12/16/10/man-7847245_1280.jpg" alt=""  width="100%" height="100%">
+                </div>
+                <div class="trainer trainer4">
+                    <img src="https://cdn.pixabay.com/photo/2022/05/16/14/47/woman-7200534_1280.jpg" width="100%" height="100%">
+                </div>
+                <div class="trainer trainer5">
+                    <img src="https://cdn.pixabay.com/photo/2016/08/31/02/58/bodybuilding-1632548_1280.jpg" alt=""  width="100%" height="100%">
+                </div>
+                <div class="trainer trainer6">
+                    <img src="https://cdn.pixabay.com/photo/2020/11/10/15/11/weightlifting-5730110_1280.jpg" alt=""  width="100%" height="100%">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- blog container -->
+        <!-- the images shoul scrooll -->
+        <div class="blog-container">
+            <div class="blog1">
+                <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                <p>The gym offers a wide variety of equipment, catering to different workout styles. Regular maintenance and occasional upgrades will keep everything in top condition.
+                </p>
+            </div>
+            <div class="blog2">
+                <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?ga=GA1.1.1770303714.1734538678&semt=ais_hybrid" alt="">
+                <p>The gym maintains a good level of cleanliness, creating a pleasant environment. Proper air circulation and odour control will enhance comfort for all members.
+                </p>
+            </div>
+            <div class="blog3">
+                <img src="https://thumbs.dreamstime.com/b/gym-portrait-rock-sign-woman-fitness-success-winning-workout-energy-health-goals-happy-face-young-gym-portrait-269581812.jpg" alt="">
+                <p>The workout area is well-structured, making it easy to navigate. Optimizing equipment placement can improve flow during peak hours. 
+                </p>
+            </div>
+            <div class="blog4">
+                <img src="https://img.freepik.com/premium-photo/portrait-bangladeshi-man_53876-84050.jpg?ga=GA1.1.1770303714.1734538678&semt=ais_hybrid" alt="">
+                <p>The variety of classes is excellent, providing options for different fitness levels. Expanding class timings will allow more members to participate. 
+                </p>
+            </div>
+            <div class="blog5">
+                <img src="https://images.pexels.com/photos/1029572/pexels-photo-1029572.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                <p>The membership offers good value with its facilities and services. Introducing perks like free guest passes or loyalty rewards can add even more appeal.
+                </p>
+            </div>
+            <div class="blog6">
+                <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?t=st=1738256817~exp=1738260417~hmac=91b0f5dab16aa8783e5ca0e257a1fd799b9d365d4079c0621023e53c6e7b7ef9&w=740" alt="">
+                <p>The gym has convenient hours, accommodating most schedules. Extending hours or offering 24/7 access would benefit even more members. 
+                </p>
+            </div>
+            <div class="blog7">
+                <img src="https://img.freepik.com/free-photo/indian-man-smiling-mockup-psd-cheerful-expression-closeup-portra_53876-143269.jpg?ga=GA1.1.1770303714.1734538678&semt=ais_hybrid" alt="">
+                <p>The gym has an energetic and motivating ambiance. A diverse music selection and motivational visuals could further inspire members. 
+                </p>
+            </div>
+            <div class="blog8">
+                <img src="https://img.freepik.com/free-photo/portrait-young-man-with-dark-curly-hair_176532-8137.jpg?ga=GA1.1.1770303714.1734538678&semt=ais_hybrid" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Autem laborum dolores
+                    totam libero explicabo doloremque quia 
+                    deleniti quam hic reiciendis. 
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <!-- feedback and map -->
+        <div class="feedbackandmap">
+            <div class="feedback">
+                <p></p>
+                <p>Feedback Form</p>
+                <input type="text" placeholder="Your Name">
+                <input type="text" placeholder="Your Email" pattern="">
+                <input type="text" placeholder="Feedback">
+                <textarea  name="" id="" placeholder="Suggestions" rows="20" cols="30" ></textarea>
+                <input type="button" value="Submit">
+
+                
+
+            </div>
+            <div class="map">
+                <p>Map</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30443.906456702887!2d78.3906161!3d17.484188500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91b5be1f29c3%3A0xf5af71d23e422328!2sKukatpally%20Housing%20Board%20Colony%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1738158746815!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+
+
+        <!-- timings -->
+         <div class="schedule-container">
+            <p>Schedule</p>
+            <div class="days">
+                <p>Monday</p><p>/</p><p>Tuesday</p><p>/</p><p>Wednesday</p>
+                <p>/</p><p>Thursday</p><p>/</p>
+                <p>Friday</p><p>/</p><p>Saturday</p><p>/</p><p>Sunday</p>
+            </div>
+            <table border="1" cellspacing="0" cellpadding="10px">
+                <tr>
+                    <td>Exercise</td>
+                    <td>Training</td>
+                    <td>Timing</td>
+                    <td>Timing</td>
+                </tr>
+                
+                
+                
+                
+                <tr>
+                    <td>BodyBuilding</td>
+                    <td>John</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+                <tr>
+                    <td>Yoga</td>
+                    <td>William</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+                <tr>
+                    <td>Jumba</td>
+                    <td>Jack</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+                <tr>
+                    <td>WeightLoss</td>
+                    <td>Willson</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+                <tr>
+                    <td>AeroDynamics</td>
+                    <td>Stephen</td>
+                    <td>timing</td>
+                    <td>timing</td>
+                </tr>
+            </table>
+         </div>
+
+
+
+
+        <footer>
+            <div class="contact">
+                <p>
+                    Phno1 : +911234567890
+                </p>
+                <p>
+                    Phno2 : +919876543210
+                </p>
+                <p><i class="bi bi-geo-alt"></i></p>
+                <p><i class="bi bi-phone"></i></p>
+                <p><i class="bi bi-envelope"></i></p>
+                <div class="footer-sym">
+                    <p><i class="bi bi-facebook"></i></p>
+                    <p><i class="bi bi-instagram"></i></p>
+                    <p><i class="bi bi-twitter"></i></p>
+                    <p><i class="bi bi-youtube"></i></p>
+                </div>
+                
+
+            </div>
+            
+
+        </footer>
+
+
+
+
+
+    </div>
+    
+</body>
+</html>
